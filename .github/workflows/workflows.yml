@@ -22,7 +22,12 @@ jobs:
           node ./scripts/build.js
           git config user.name "shanpig"
           git config user.email "shanpigLiao@gmail.com"
+
+          git fetch origin main
+          git checkout design-tokens
+          git rebase main
+          
           git add .
           git commit -m'transform and build tokens'
-          git push https://${{ env.GITHUB_TOKEN }}@github.com/shanpig/test.git HEAD:design-tokens
+          git push origin design-tokens
           gh pr create -B main -H design-tokens --title 'Design tokens update' --body 'Created by Github action'

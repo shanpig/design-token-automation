@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 18 Sep 2023 02:31:33 GMT
+ * Generated on Mon, 18 Sep 2023 06:24:43 GMT
  */
 
 :root {
@@ -39,6 +39,7 @@
   --spacing-lg: 32px;
   --spacing-xl: 64px;
   --spacing-multi-value: 8 64; /* You can have multiple values in a single spacing token. Read more on these: https://docs.tokens.studio/available-tokens/spacing-tokens#multi-value-spacing-tokens */
+  --spacing-test-ref6: 2px;
   --border-radius-sm: 4px;
   --border-radius-lg: 8px;
   --border-radius-xl: 16px;
@@ -161,6 +162,7 @@
   --font-sizes-sm: 13.6px;
   --font-sizes-xs: 10.4px;
   --button-primary: #63b3ed; /* hahhaa */
+  --test-ref: 32px; /* spacing for test reference and sync to github */
   --token-set-order-0: core;
   --token-set-order-1: light;
   --token-set-order-2: dark;

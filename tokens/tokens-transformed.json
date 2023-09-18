@@ -215,6 +215,10 @@
       "value": "8 64",
       "type": "spacing",
       "description": "You can have multiple values in a single spacing token. Read more on these: https://docs.tokens.studio/available-tokens/spacing-tokens#multi-value-spacing-tokens"
+    },
+    "testRef6": {
+      "value": 2,
+      "type": "spacing"
     }
   },
   "borderRadius": {
@@ -744,6 +748,11 @@
     "value": "#63b3ed",
     "type": "color",
     "description": "hahhaa"
+  },
+  "test-ref": {
+    "value": 32,
+    "type": "spacing",
+    "description": "spacing for test reference and sync to github"
   },
   "tokenSetOrder": {
     "0": {

@@ -58,7 +58,8 @@
     "md": "16px",
     "lg": "32px",
     "xl": "64px",
-    "multi-value": "8 64"
+    "multi-value": "8 64",
+    "testRef6": "2px"
   },
   "borderRadius": {
     "sm": "4px",
@@ -220,6 +221,7 @@
     "xs": "10.4px"
   },
   "buttonPrimary": "#63b3ed",
+  "test-ref": "32px",
   "tokenSetOrder": {
     "0": "core",
     "1": "light",

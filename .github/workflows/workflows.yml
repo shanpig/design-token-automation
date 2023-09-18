@@ -28,9 +28,11 @@ jobs:
           git config user.name "shanpig"
           git config user.email "shanpigLiao@gmail.com"
 
-          echo "update with main branch"
-          git fetch origin/main
+          echo "fetch origin main"
+          git fetch origin main
+          echo "checkout design-tokens"
           git checkout design-tokens
+          echo "rebase origin main"
           git rebase origin/main
           
           echo "commit changes and create pr"

@@ -5,7 +5,7 @@ const StyleDictionary = require('style-dictionary');
 registerTransforms(StyleDictionary);
 
 const myStyleDictionary = StyleDictionary.extend({
-  source: ['../tokens/tokens-transformed.json'],
+  source: ['tokens/tokens-transformed.json'],
   platforms: {
     css: {
       transforms: [

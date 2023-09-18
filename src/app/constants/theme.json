@@ -220,6 +220,11 @@
     "xs": "10.4px"
   },
   "buttonPrimary": "#63b3ed",
+  "test-ref": "32px",
+  "testRef2": "8px",
+  "testRef3": "4px",
+  "tesrRef4": "16px",
+  "testRef5": "8px",
   "tokenSetOrder": {
     "0": "core",
     "1": "light",

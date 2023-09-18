@@ -43,7 +43,8 @@ jobs:
           PRs=$(echo $RESPONSE | jq 'map(.url)')
           echo "found PRs: $PRs"
           if [[ $(echo $PRs | jq 'length') == 0 ]]; then
+            echo 'no PR exists, creating PR...'
             gh pr create -B ${{ env.BASE_BRANCH }} -H ${{ env.HEAD_BRANCH }} --title 'Design tokens update' --body 'Created by Github action'
           else
-            echo "pr already exists: $PR"
+            echo "PR already exists: $PRs"
           fi

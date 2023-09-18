@@ -223,8 +223,7 @@
   "test-ref": "32px",
   "testRef2": "8px",
   "testRef3": "4px",
-  "tesrRef4": "16px",
-  "testRef5": "8px",
+  "simple shadow": "2px 2px 0 2px #000000",
   "tokenSetOrder": {
     "0": "core",
     "1": "light",

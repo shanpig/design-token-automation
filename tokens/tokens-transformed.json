@@ -758,13 +758,16 @@
     "value": 4,
     "type": "spacing"
   },
-  "tesrRef4": {
-    "value": 16,
-    "type": "spacing"
-  },
-  "testRef5": {
-    "value": 8,
-    "type": "spacing"
+  "simple shadow": {
+    "value": {
+      "x": 2,
+      "y": 2,
+      "blur": 0,
+      "spread": 2,
+      "color": "#000000",
+      "type": "dropShadow"
+    },
+    "type": "boxShadow"
   },
   "tokenSetOrder": {
     "0": {

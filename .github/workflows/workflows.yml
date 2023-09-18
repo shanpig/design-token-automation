@@ -21,13 +21,6 @@ jobs:
           git config user.name "shanpig"
           git config user.email "shanpigLiao@gmail.com"
           
-          echo "fetch origin main"
-          git fetch origin main
-          echo "checkout design-tokens"
-          git checkout design-tokens
-          echo "rebase origin main"
-          git rebase origin/main
-          
           echo "install token-transformer"
           npm install token-transformer
           echo "transform tokens"

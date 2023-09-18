@@ -2,25 +2,47 @@ on:
   push:
     branches:
       - design-tokens
+    paths:
+      - "tokens/tokens.json"
 
 jobs:
-  build:
+  create-pr:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: create pull request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          npm install token-transformer
+          npx token-transformer tokens/tokens.json tokens/tokens-transformed.json
+          node build.js
+          git config user.name "shanpig"
+          git config user.email "shanpigLiao@gmail.com"
+          git add .
+          git commit -m'transform and build tokens'
+          git push https://${{ secrets.GH_PAT }}@github.com/shanpig/test.git HEAD:design-tokens
+          gh pr create -B main -H design-tokens --title 'Design tokens update' --body 'Created by Github action'
+        
+
+      # - name: Create PR
+      #   run: |
+      #     # Replace with your GitHub username, repository, branch names, and PR title
+      #     gh pr create --base main --head design-tokens --title "Design tokens update"
+
       - name: Run your scripts
         run: |
           # Your custom scripts go here
           # Modify your project as needed
-          echo "hello testing"
+          echo "hello testing ${{ secrets.test }}"
 
       # - name: Commit changes
       #   run: |
-      #     git config user.name "Your Name"
-      #     git config user.email "your.email@example.com"
+      #     git config user.name "shanpig"
+      #     git config user.email "shanpigLiao@gmail.com"
       #     git add .
       #     git commit -m "Auto-commit by GitHub Actions"
       #     git push https://${{ secrets.GH_PAT }}@github.com/your-username/your-repo.git HEAD:your-branch-name

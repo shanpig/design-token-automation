@@ -1,0 +1,50 @@
+on:
+  push:
+    branches:
+      - design-tokens
+    paths:
+      - "tokens/tokens.json"
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: update tokens
+        env:
+          REPO_OWNER: shanpig
+          REPO_EMAIL: shanpigLiao@gmail.com
+          BASE_BRANCH: main
+          HEAD_BRANCH: design-tokens
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          echo "set git config"
+          git config user.name "${{ env.REPO_OWNER }}"
+          git config user.email "${{ env.REPO_EMAIL }}"
+
+          echo "install token-transformer"
+          npm install token-transformer
+          echo "transform tokens"
+          npx token-transformer tokens/tokens.json tokens/tokens-transformed.json
+          echo "build tokens"
+          node ./scripts/build.js
+
+          echo "commit changes and create pr"
+          git add .
+          git commit -m'transform and build tokens'
+          git push origin ${{ env.HEAD_BRANCH }}
+
+          echo "check if pr exists, if not, create one"
+          RESPONSE=$(curl -s -H "Authorization: token ${{ env.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ env.REPO_OWNER }}/test/pulls?base=${{ env.BASE_BRANCH }}&head=${{ env.REPO_OWNER }}:${{ env.HEAD_BRANCH }}")
+          PRs=$(echo $RESPONSE | jq 'map(.url)')
+          echo "found PRs: $PRs"
+          if [[ $(echo $PRs | jq 'length') == 0 ]]; then
+            echo 'no PR exists, creating PR...'
+            gh pr create -B ${{ env.BASE_BRANCH }} -H ${{ env.HEAD_BRANCH }} --title 'Design tokens update' --body 'Created by Github action'
+          else
+            echo "PR already exists: $PRs"
+          fi

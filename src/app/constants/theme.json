@@ -44,6 +44,7 @@
   "shadows": {
     "default": "#0000004d"
   },
+  "referencedShadow": "2px 2px 0 2px #000000",
   "dimension": {
     "scale": "2px",
     "xs": "4px",

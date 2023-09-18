@@ -164,6 +164,17 @@
       "type": "color"
     }
   },
+  "referencedShadow": {
+    "value": {
+      "x": 2,
+      "y": 2,
+      "blur": 0,
+      "spread": 2,
+      "color": "#000000",
+      "type": "dropShadow"
+    },
+    "type": "boxShadow"
+  },
   "dimension": {
     "scale": {
       "value": 2,

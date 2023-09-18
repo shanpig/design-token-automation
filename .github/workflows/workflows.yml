@@ -17,12 +17,24 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
+          echo "install token-transformer"
           npm install token-transformer
+          echo "transform tokens"
           npx token-transformer tokens/tokens.json tokens/tokens-transformed.json
+          echo "build tokens"
           node ./scripts/build.js
+
+          echo "set git config"
           git config user.name "shanpig"
           git config user.email "shanpigLiao@gmail.com"
+
+          echo "update with main branch"
+          git fetch origin/main
+          git checkout design-tokens
+          git rebase origin/main
+          
+          echo "commit changes and create pr"
           git add .
           git commit -m'transform and build tokens'
-          git push https://${{ env.GITHUB_TOKEN }}@github.com/shanpig/test.git HEAD:design-tokens
+          git push origin design-tokens
           gh pr create -B main -H design-tokens --title 'Design tokens update' --body 'Created by Github action'

@@ -41,6 +41,7 @@ jobs:
           RESPONSE=$(curl -s -H "Authorization: token ${{ env.GITHUB_TOKEN }}" \
             "https://api.github.com/repos/${{ env.REPO_OWNER }}/test/pulls?base=${{ env.BASE_BRANCH }}&head=${{ env.REPO_OWNER }}:${{ env.HEAD_BRANCH }}")
           PR=$(echo $RESPONSE | jq '[.[0] | .url]')
+          echo "pr: $PR"
           if [[ -n $PR ]]; then
             gh pr create -B ${{ env.BASE_BRANCH }} -H ${{ env.HEAD_BRANCH }} --title 'Design tokens update' --body 'Created by Github action'
           else

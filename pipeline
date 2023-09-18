@@ -1,0 +1,5 @@
+tokens.json
+> token-transformer ./tokens.json ./tokens-transformed.json
+tokens-transformed.json
+> node ./build.js
+variables.json

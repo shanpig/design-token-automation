@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 18 Sep 2023 06:24:43 GMT
+ * Generated on Mon, 18 Sep 2023 06:27:50 GMT
  */
 
 :root {
@@ -40,6 +40,7 @@
   --spacing-xl: 64px;
   --spacing-multi-value: 8 64; /* You can have multiple values in a single spacing token. Read more on these: https://docs.tokens.studio/available-tokens/spacing-tokens#multi-value-spacing-tokens */
   --spacing-test-ref6: 2px;
+  --spacing-new-spacing: 8px;
   --border-radius-sm: 4px;
   --border-radius-lg: 8px;
   --border-radius-xl: 16px;

@@ -219,6 +219,10 @@
     "testRef6": {
       "value": 2,
       "type": "spacing"
+    },
+    "newSpacing": {
+      "value": 8,
+      "type": "spacing"
     }
   },
   "borderRadius": {

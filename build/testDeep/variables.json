@@ -59,7 +59,8 @@
     "lg": "32px",
     "xl": "64px",
     "multi-value": "8 64",
-    "testRef6": "2px"
+    "testRef6": "2px",
+    "newSpacing": "8px"
   },
   "borderRadius": {
     "sm": "4px",

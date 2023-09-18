@@ -758,14 +758,6 @@
     "value": 4,
     "type": "spacing"
   },
-  "tesrRef4": {
-    "value": 16,
-    "type": "spacing"
-  },
-  "testRef5": {
-    "value": 8,
-    "type": "spacing"
-  },
   "tokenSetOrder": {
     "0": {
       "value": "core",

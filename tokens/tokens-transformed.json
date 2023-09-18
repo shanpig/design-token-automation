@@ -758,6 +758,17 @@
     "value": 4,
     "type": "spacing"
   },
+  "simple shadow": {
+    "value": {
+      "x": 2,
+      "y": 2,
+      "blur": 0,
+      "spread": 2,
+      "color": "#000000",
+      "type": "dropShadow"
+    },
+    "type": "boxShadow"
+  },
   "tokenSetOrder": {
     "0": {
       "value": "core",

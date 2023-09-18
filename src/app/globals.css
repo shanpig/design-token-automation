@@ -87,12 +87,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white;
 }
 
 a {
@@ -109,7 +104,7 @@ a {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 30px;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;

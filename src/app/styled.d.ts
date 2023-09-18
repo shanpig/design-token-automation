@@ -1,7 +1,7 @@
 // https://styled-components.com/docs/api#typescript
 
 // import original module declarations
-import type theme from '../../tokens/theme.json';
+import type theme from './constants/theme.json';
 
 import 'styled-components';
 

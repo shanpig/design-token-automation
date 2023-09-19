@@ -754,10 +754,6 @@
     "value": 8,
     "type": "spacing"
   },
-  "testRef3": {
-    "value": 4,
-    "type": "spacing"
-  },
   "simple shadow": {
     "value": {
       "x": 2,

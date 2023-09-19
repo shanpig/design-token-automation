@@ -25,17 +25,6 @@ jobs:
           git config user.name "${{ env.REPO_OWNER }}"
           git config user.email "${{ env.REPO_EMAIL }}"
 
-          echo "sync branch ${{ env.HEAD_BRANCH }} with branch ${{ env.BASE_BRANCH }}"
-          echo "checkout ${{ env.BASE_BRANCH }}"
-          git fetch origin ${{ env.BASE_BRANCH }}
-          git checkout ${{ env.BASE_BRANCH }}
-
-          echo "checkout ${{ env.HEAD_BRANCH }}"
-          git checkout ${{ env.HEAD_BRANCH }}
-
-          echo "pull origin ${{ env.BASE_BRANCH }}"
-          git pull origin ${{ env.BASE_BRANCH }}
-          
           echo "install token-transformer"
           npm install token-transformer
           echo "transform tokens"

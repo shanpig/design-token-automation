@@ -745,6 +745,27 @@
     "type": "color",
     "description": "hahhaa"
   },
+  "test-ref": {
+    "value": 32,
+    "type": "spacing",
+    "description": "spacing for test reference and sync to github"
+  },
+  "testRef2": {
+    "value": 8,
+    "type": "spacing"
+  },
+  "testRef3": {
+    "value": 4,
+    "type": "spacing"
+  },
+  "tesrRef4": {
+    "value": 16,
+    "type": "spacing"
+  },
+  "testRef5": {
+    "value": 8,
+    "type": "spacing"
+  },
   "tokenSetOrder": {
     "0": {
       "value": "core",
